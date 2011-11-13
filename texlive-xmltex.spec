@@ -6,7 +6,7 @@
 # catalog-version 0.8
 Name:		texlive-xmltex
 Version:	0.8
-Release:	1
+Release:	2
 Summary:	Support for parsing XML documents
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/xmltex/base
@@ -21,9 +21,7 @@ Requires:	texlive-latex
 Requires:	texlive-pdftex
 Requires:	texlive-tex
 Requires:	texlive-xmltex.bin
-Provides:	xmltex = 1:20111103
-Obsoletes:	xmltex <= 1:3.0
-Conflicts:	xmltex <= 1:3.0
+%rename xmltex
 Conflicts:	texlive-texmf <= 20110705-3
 Conflicts:	texlive-doc <= 20110705-3
 Requires(post):	texlive-tetex
