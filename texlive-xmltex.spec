@@ -6,7 +6,7 @@
 # catalog-version 0.8
 Name:		texlive-xmltex
 Version:	0.8
-Release:	3
+Release:	4
 Summary:	Support for parsing XML documents
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/xmltex/base
@@ -17,12 +17,12 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
+Requires(post):	texlive-tetex
 Requires:	texlive-latex
 Requires:	texlive-pdftex
 Requires:	texlive-tex
 Requires:	texlive-xmltex.bin
 %rename xmltex
-Requires(post):	texlive-tetex
 
 %description
 This package provides an implementation of a parser for
@@ -85,6 +85,8 @@ mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_texmf_fmtutil_d}
 cat > %{buildroot}%{_texmf_fmtutil_d}/xmltex <<EOF
+#
+# from xmltex:
 xmltex pdftex language.dat *xmltex.ini
 pdfxmltex pdftex language.dat *pdfxmltex.ini
 EOF
