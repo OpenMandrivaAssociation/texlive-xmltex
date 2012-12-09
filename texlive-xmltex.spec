@@ -90,3 +90,24 @@ cat > %{buildroot}%{_texmf_fmtutil_d}/xmltex <<EOF
 xmltex pdftex language.dat *xmltex.ini
 pdfxmltex pdftex language.dat *pdfxmltex.ini
 EOF
+
+
+%changelog
+* Tue Feb 21 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.8-4
++ Revision: 778489
+- Rebuild after tlpobj2spec.pl bug correction.
+
+* Thu Jan 05 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.8-3
++ Revision: 757664
+- Rebuild to reduce used resources
+
+* Sun Nov 13 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.8-2
++ Revision: 730324
+- Use rename macro instead of mix of provides/conflicts/obsoletes
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.8-1
++ Revision: 719945
+- texlive-xmltex
+- texlive-xmltex
+- texlive-xmltex
+
