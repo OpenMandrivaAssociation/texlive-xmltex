@@ -1,12 +1,12 @@
-# revision 23409
+# revision 28273
 # category Package
 # catalog-ctan /macros/xmltex/base
-# catalog-date 2006-12-16 17:11:43 +0100
+# catalog-date 2012-06-08 08:33:19 +0200
 # catalog-license lppl
 # catalog-version 0.8
 Name:		texlive-xmltex
 Version:	0.8
-Release:	4
+Release:	5
 Summary:	Support for parsing XML documents
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/xmltex/base
@@ -90,24 +90,3 @@ cat > %{buildroot}%{_texmf_fmtutil_d}/xmltex <<EOF
 xmltex pdftex language.dat *xmltex.ini
 pdfxmltex pdftex language.dat *pdfxmltex.ini
 EOF
-
-
-%changelog
-* Tue Feb 21 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.8-4
-+ Revision: 778489
-- Rebuild after tlpobj2spec.pl bug correction.
-
-* Thu Jan 05 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.8-3
-+ Revision: 757664
-- Rebuild to reduce used resources
-
-* Sun Nov 13 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.8-2
-+ Revision: 730324
-- Use rename macro instead of mix of provides/conflicts/obsoletes
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.8-1
-+ Revision: 719945
-- texlive-xmltex
-- texlive-xmltex
-- texlive-xmltex
-
