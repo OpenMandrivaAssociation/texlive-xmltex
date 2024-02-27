@@ -1,6 +1,6 @@
 Name:		texlive-xmltex
-Version:	62145
-Release:	2
+Version:	69742
+Release:	1
 Summary:	Support for parsing XML documents
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/xmltex/base
