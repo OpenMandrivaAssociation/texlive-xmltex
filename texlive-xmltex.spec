@@ -1,5 +1,5 @@
 Name:		texlive-xmltex
-Version:	69742
+Version:	71362
 Release:	1
 Summary:	Support for parsing XML documents
 Group:		Publishing
