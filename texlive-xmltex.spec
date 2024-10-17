@@ -3,7 +3,7 @@ Version:	71362
 Release:	1
 Summary:	Support for parsing XML documents
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/xmltex/base
+URL:		https://www.ctan.org/tex-archive/macros/xmltex/base
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xmltex.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xmltex.doc.r%{version}.tar.xz
