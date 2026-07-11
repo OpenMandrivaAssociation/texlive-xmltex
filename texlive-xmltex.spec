@@ -1,60 +1,42 @@
-Name:		texlive-xmltex
-Version:	71362
-Release:	1
+%global tl_name xmltex
+%global tl_revision 76924
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.8
+Release:	%{tl_revision}.1
 Summary:	Support for parsing XML documents
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/xmltex/base
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xmltex.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xmltex.doc.r%{version}.tar.xz
+URL:		https://www.ctan.org/tex-archive/macros/plain/formats/xmltex/base
+License:	lppl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/xmltex.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/xmltex.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
-Requires(post):	texlive-tetex
-Requires:	texlive-latex
-Requires:	texlive-pdftex
-Requires:	texlive-tex
-Requires:	texlive-xmltex.bin
-%rename xmltex
+BuildSystem:	texlive
+Requires:	texlive(babel)
+Requires:	texlive(cm)
+Requires:	texlive(dehyph)
+Requires:	texlive(firstaid)
+Requires:	texlive(hyph-utf8)
+Requires:	texlive(hyphen-base)
+Requires:	texlive(knuth-lib)
+Requires:	texlive(l3backend)
+Requires:	texlive(l3kernel)
+Requires:	texlive(latex)
+Requires:	texlive(latex-fonts)
+Requires:	texlive(pdftex)
+Requires:	texlive(tex)
+Requires:	texlive(tex-ini-files)
+Requires:	texlive(unicode-data)
+Requires:	texlive(xmltex.bin)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides an implementation of a parser for
-documents matching the XML 1.0 and XML Namespace
-Recommendations. In addition to parsing commands are provided
-to attatch TeX typesetting instructions to the various markup
-elemenets as they are encounted. Sample files for typesetting a
-subset of TEI, MathML, are included. Element and Attribute
-names, as well as character data, may use any characters
-allowed in XML, using UTF-8 or a suitable 8-bit encoding.
+The package provides an implementation of a parser for documents
+matching the XML 1.0 and XML Namespace Recommendations. In addition to
+parsing commands are provided to attach TeX typesetting instructions to
+the various markup elements as they are encountered. Sample files for
+typesetting a subset of TEI, MathML, are included. Element and Attribute
+names, as well as character data, may use any characters allowed in XML,
+using UTF-8 or a suitable 8-bit encoding.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/xmltex
-%_texmf_fmtutil_d/xmltex
-%doc %{_texmfdistdir}/doc/otherformats/xmltex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_datadir}
-cp -fpar texmf-dist %{buildroot}%{_datadir}
-mkdir -p %{buildroot}%{_texmf_fmtutil_d}
-cat > %{buildroot}%{_texmf_fmtutil_d}/xmltex <<EOF
-#
-# from xmltex:
-xmltex pdftex language.dat *xmltex.ini
-pdfxmltex pdftex language.dat *pdfxmltex.ini
-EOF
