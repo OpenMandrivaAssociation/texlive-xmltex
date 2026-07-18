@@ -1,5 +1,6 @@
 %global tl_name xmltex
 %global tl_revision 76924
+%global tl_bin_links pdfxmltex:pdftex xmltex:pdftex
 
 Name:		texlive-%{tl_name}
 Epoch:		1
@@ -30,6 +31,8 @@ Requires:	texlive(tex-ini-files)
 Requires:	texlive(unicode-data)
 Requires:	texlive(xmltex.bin)
 Provides:	texlive(%{tl_name}) = %{tl_revision}
+Provides:	texlive(%{tl_name}.bin) = %{tl_revision}
+Provides:	texlive-%{tl_name}.bin = %{EVRD}
 
 %description
 The package provides an implementation of a parser for documents
